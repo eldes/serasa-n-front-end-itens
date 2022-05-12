@@ -1,4 +1,13 @@
 header {
     height: 100px;
     background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header > span {
+    font-size: 36px;
+    color: #fff;
+    font-weight: bold;
 }
