@@ -1,0 +1,8 @@
+button {
+    background-color: blueviolet;
+    padding: 4px 16px;
+    border-style: none;
+    color: #fff;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
