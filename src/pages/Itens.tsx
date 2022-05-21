@@ -4,30 +4,43 @@ import Cabecalho from '../components/Cabecalho';
 import Rodape from '../components/Rodape';
 import './Itens.css';
 
+enum Estado {
+    Inicial,
+    Criar
+}
+
 const ItensPage = function() {
-    //let estado = 'INICIAL';
-    const [estado, setEstado] = useState('INICIAL');
+    const [estado, setEstado] = useState(Estado.Inicial);
 
     const botaoCriarClicado = function() {
-        //estado = 'CRIAR';
-        setEstado('CRIAR');
+        setEstado(Estado.Criar);
+    };
+
+    const botaoSalvarClicado = function() {
+        //...
+        setEstado(Estado.Inicial);
+    };
+
+    const botaoCancelarClicado = function() {
+        setEstado(Estado.Inicial);
     };
 
     return (
         <>
             <Cabecalho />
             <main>
-                <button onClick={botaoCriarClicado}>Teste</button>
                 <h1>Itens</h1>
-                <ul>
+                <ul className='flat-list'>
                     <li>Item 1</li>
                     <li>Item 2</li>
                     <li>Item 3</li>
                 </ul>
-                {(estado === 'INICIAL') && (
-                    <Botao texto="Criar" />
+                {(estado === Estado.Inicial) && (
+                    <div className="painel-botoes">
+                        <Botao texto="Criar" clique={botaoCriarClicado} />
+                    </div>
                 )}
-                {(estado === 'CRIAR') && (
+                {(estado === Estado.Criar) && (
                     <form className="item">
                     <label>
                         Nome:
@@ -37,9 +50,9 @@ const ItensPage = function() {
                         Descrição:
                         <textarea placeholder="Descrição"></textarea>
                     </label>
-                    <div>
-                        <Botao texto="Salvar" />
-                        <Botao texto="Cancelar" />
+                    <div className="painel-botoes">
+                        <Botao texto="Salvar" clique={botaoSalvarClicado} />
+                        <Botao texto="Cancelar" clique={botaoCancelarClicado} />
                     </div>
                     </form>
                 )} 

@@ -3,12 +3,13 @@ import './Botao.css';
 
 type Props = {
     texto: string
-}
+    clique?: () => void
+};
 
 const Botao: FunctionComponent<Props> = function(props) {
     return (
         <>
-        <button>{props.texto}</button>
+        <button onClick={props.clique}>{props.texto}</button>
         </>
     );
 };

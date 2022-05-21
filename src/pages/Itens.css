@@ -1,7 +1,24 @@
+ul.flat-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+ul.flat-list li {
+    list-style-type: none;
+    padding: 16px 16px;
+    border-top: 1px solid #ccc;
+}
+
+ul.flat-list li:last-child {
+    border-bottom: 1px solid #ccc;
+}
+
 form.item {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+    padding: 16px;
 }
 
 form.item label {
